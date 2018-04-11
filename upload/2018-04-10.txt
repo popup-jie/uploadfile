@@ -1,0 +1,8 @@
+1、打开git-bash敲命令行
+2、ssh-keygen -t rsa -C “suntg@usoftchina.com” 一路enter
+3、会生成id_rsa id_rsa.pub 文件
+4、打开id_rsa.pub文件，复制里面的内容
+5、进入Phabricator，设置>>SSH公钥>>SSH Key Action>>上传公钥
+6、名称输入id_rsa，Public Key输入第4步复制的内容，“上传公钥”
+7、回到git-bash，ssh-add id_rsa
+8、新建git仓库即可

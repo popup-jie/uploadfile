@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .drop-area {
+      margin: auto;
+      width: 500px;
+      height: 500px;
+      border: 1px pink dashed;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="drop-area" ondrop="drop_hander(event)" ondragover="dragover_hander(event)">
+    将文件拖动于此
+  </div>
+  <script>
+    function dragover_hander(event) {
+      event.preventDefault();
+    }
+
+    function drop_hander(event) {
+      event.preventDefault();
+
+      var files = event.dataTransfer.files;
+
+      var formData = new FormData()
+
+      for (var i = 0, len = files.length; i < len; i++) {
+        formData.append('file', files[i])
+      }
+      formData.append('key', '1')
+
+      var request = new XMLHttpRequest();
+
+      request.open('POST', '/process_post');
+
+      request.send(formData)
+    }
+  </script>
+</body>
+
+</html>
