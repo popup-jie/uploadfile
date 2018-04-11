@@ -3,7 +3,7 @@
 
 ## build start
 
-```base 
+``` bash
 # install dependencies
 $ npm install # Or yarn install
 
