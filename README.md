@@ -4,5 +4,11 @@
 ## build start
 
 ```base 
-  cnpm install or 
+# install dependencies
+$ npm install # Or yarn install
+
+# start project
+$ node ./formupload.js
+
+# browse in http://localhost:8081
 ```
